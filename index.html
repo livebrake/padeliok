@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padeliok.lt | Netrukus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #000000;
+            --grid-color: rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .main-container {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .logo-wrapper img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+        .hero-text h1 {
+            /* Naujas šriftas šūkiui */
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 6vw, 2.2rem);
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 50px;
+            color: var(--accent-color);
+        }
+
+        .contact-box {
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+
+        .contact-box p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #999;
+        }
+
+        .email-link {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+
+        .email-link:hover {
+            opacity: 0.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-height: 500px) {
+            body { overflow-y: auto; align-items: flex-start; padding: 40px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="logo-wrapper">
+            <img src="logo_PNG.png" alt="Padeliok.lt logo">
+        </div>
+        
+        <div class="hero-text">
+            <h1>Sužinok sklypo galimybes</h1>
+        </div>
+
+        <div class="contact-box">
+            <p>Susisiekime</p>
+            <a href="mailto:prasau@padeliok.lt" class="email-link">prasau@padeliok.lt</a>
+        </div>
+    </div>
+
+</body>
+</html>

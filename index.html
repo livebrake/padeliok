@@ -3,118 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padeliok.lt | Netrukus</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <title>Padeliok.lt</title>
+    <link rel="stylesheet" href="fontai/satoshi.css">
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #1a1a1a;
-            --accent-color: #000000;
-            --grid-color: rgba(0, 0, 0, 0.04);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html {
+            height: 100%;
+            font-family: 'Satoshi', sans-serif;
+            background-color: #1a1a1a; /* Jei foto nepasikraus, matysi tamsią spalvą */
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+        .main-wrapper {
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background-image: 
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        .main-container {
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-            z-index: 1;
-            animation: fadeIn 1.2s ease-out;
-        }
-
-        .logo-wrapper img {
             width: 100%;
-            max-width: 280px;
+            /* BŪTINAI PATIKRINK RAIDES: background.png ar background.PNG? */
+            background-image: url("background.png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* LOGOTIPAS */
+        .logo {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 200px; /* Padidinau, kad tikrai matytųsi */
             height: auto;
-            margin-bottom: 40px;
+            z-index: 10;
+            display: block !important;
         }
 
-        .hero-text h1 {
-            /* Naujas šriftas šūkiui */
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.4rem, 6vw, 2.2rem);
-            font-style: italic;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            margin-bottom: 50px;
-            color: var(--accent-color);
-        }
+	.content-container {
+    	   text-align: center;
+   	   max-width: 900px;
+    	   padding: 0 20px;
+	}
 
-        .contact-box {
-            border-top: 1px solid #eee;
-            padding-top: 30px;
-        }
+	/* Pagrindinis sakinys - SATOSHI REGULAR */
+	.main-text {
+    	   font-weight: 400; 
+    	   font-size: 1.5rem; /* Gali keisti: 1.2rem - mažesnis, 1.8rem - didesnis */
+    	   line-height: 1.6;
+    	   color: white;
+    	   text-transform: none; /* Likęs tekstas nebus CAPS */
+    	   margin-bottom: 40px;
+	}
 
-        .contact-box p {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            color: #999;
-        }
+	/* JAU GREITAI dalis - SATOSHI BLACK */
+	.highlight-black {
+    	   font-weight: 900; /* BLACK svoris */
+    	   text-transform: uppercase; /* Tik ši dalis bus CAPS */
+    	   margin-right: 10px; /* Tarpelis iki kito žodžio */
+	}
 
-        .email-link {
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: opacity 0.3s ease;
-        }
+	/* KONTAKTAI - SATOSHI LIGHT / BLACK */
+	.footer-cta {
+   	   font-weight: 300; /* LIGHT */
+    	   font-size: 1.1rem;
+    	   color: rgba(255,255,255,0.8);
+	}
 
-        .email-link:hover {
-            opacity: 0.6;
-        }
+	.email-link {
+    	   font-weight: 900; /* BLACK */
+    	   color: #ff9900;
+    	   text-decoration: none;
+	}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-height: 500px) {
-            body { overflow-y: auto; align-items: flex-start; padding: 40px 0; }
+        /* Mobiliems */
+        @media (max-width: 768px) {
+            .logo { position: static; margin-bottom: 40px; width: 150px; }
+            .hero-title { letter-spacing: 5px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="logo-wrapper">
-            <img src="logo_PNG.png" alt="Padeliok.lt logo">
-        </div>
-        
-        <div class="hero-text">
-            <h1>Sužinok sklypo galimybes</h1>
-        </div>
+    <div class="main-wrapper">
+        <img src="logo.png" alt="Padeliok" class="logo">
+	<div class="content-container">
+   	   <p class="main-text">
+              <span class="highlight-black">JAU GREITAI.</span> 
+              Nauja platforma leisianti atlikti išsamią perkamo ar parduodamo sklypo galimybių studiją.
+    </p>
 
-        <div class="contact-box">
-            <p>Susisiekime</p>
-            <a href="mailto:prasau@padeliok.lt" class="email-link">prasau@padeliok.lt</a>
-        </div>
+    <div class="footer-cta">
+        susisiek jau dabar <a href="mailto:info@padeliok.lt" class="email-link">info@padeliok.lt</a>
     </div>
+</div>
 
 </body>
 </html>

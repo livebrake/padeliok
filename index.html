@@ -80,10 +80,31 @@
     	   text-decoration: none;
 	}
 
-        /* Mobiliems */
-        @media (max-width: 768px) {
-            .logo { position: static; margin-bottom: 40px; width: 150px; }
-            .hero-title { letter-spacing: 5px; }
+	/* Nustatymai telefonams (ekranams iki 768px pločio) */
+	@media (max-width: 768px) {
+    	.main-description {
+        	/* Mažesnis šriftas telefonui */
+        	   font-size: 1.8rem !important; 
+        	/* Mažesni tarpai tarp raidžių, kad tilptų į plotį */
+        	   letter-spacing: 2px !important;
+        	/* Daugiau vietos tarp eilučių, kad raidės nesuliptų */
+        	   line-height: 1.4 !important;
+        	/* Pridedame šoninius tarpus, kad tekstas neliestų ekrano kraštų */
+        	   padding: 0 20px;
+    }
+
+	.text-black {
+        	/* Jei "JAU GREITAI" vis tiek per didelis, mažiname čia */
+        font-size: 2rem !important;
+        letter-spacing: 4px !important;
+        display: block; /* Padaro, kad "JAU GREITAI" būtų atskiroje eilutėje viršuje */
+        margin-bottom: 10px;
+    }
+
+    .footer-cta {
+        font-size: 1.2rem !important;
+    }
+}
         }
     </style>
 </head>

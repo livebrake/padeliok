@@ -11,13 +11,12 @@
         body, html {
             height: 100%;
             font-family: 'Satoshi', sans-serif;
-            background-color: #1a1a1a; /* Jei foto nepasikraus, matysi tamsią spalvą */
+            background-color: #1a1a1a;
         }
 
         .main-wrapper {
             height: 100vh;
             width: 100%;
-            /* BŪTINAI PATIKRINK RAIDES: background.png ar background.PNG? */
             background-image: url("background.png");
             background-size: cover;
             background-position: center center;
@@ -33,95 +32,104 @@
             padding: 20px;
         }
 
-        /* LOGOTIPAS */
+        /* LOGOTIPAS (Kompiuteriui) */
         .logo {
             position: absolute;
             top: 50px;
             left: 50px;
-            width: 300px; /* Padidinau, kad tikrai matytųsi */
-	    height: auto;
+            width: 300px; 
+            height: auto;
             z-index: 10;
             display: block !important;
         }
 
-	.content-container {
-    	   text-align: center;
-   	   max-width: 1030px;
-    	   padding: 0 20px;
-	}
+        .content-container {
+            text-align: center;
+            max-width: 1030px;
+            padding: 0 20px;
+        }
 
-	/* Pagrindinis sakinys - SATOSHI REGULAR */
-	.main-text {
-    	   font-weight: 400; 
-    	   font-size: 2.99rem; /* Gali keisti: 1.2rem - mažesnis, 1.8rem - didesnis */
-    	   line-height: 1.6;
-    	   color: white;
-    	   text-transform: uppercase; /* Likęs tekstas nebus CAPS */
-	   margin-top: 220px;
-    	   margin-bottom: 10px;
-	}
+        .main-text {
+            font-weight: 400; 
+            font-size: 2.99rem;
+            line-height: 1.6;
+            color: white;
+            text-transform: uppercase;
+            margin-top: 220px;
+            margin-bottom: 10px;
+        }
 
-	/* JAU GREITAI dalis - SATOSHI BLACK */
-	.highlight-black {
-    	   font-weight: 900; /* BLACK svoris */
-    	   text-transform: uppercase; /* Tik ši dalis bus CAPS */
-    	   margin-right: 10px; /* Tarpelis iki kito žodžio */
-	}
+        .highlight-black {
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
 
-	/* KONTAKTAI - SATOSHI LIGHT */
-	.footer-cta {
-	   margin-top: 220px; /* Tai sukurs papildomą atstumą nuo viršuje esančio teksto */
-   	   font-weight: 300; /* LIGHT */
-    	   font-size: 1.8rem;
-    	   color: rgba(255,255,255,0.8);
-	}
+        .footer-cta {
+            margin-top: 220px;
+            font-weight: 300;
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.8);
+        }
 
-	.email-link {
-    	   font-weight: 700; /* BOLD */
-    	   color: #ff9900;
-    	   text-decoration: none;
-	}
+        .email-link {
+            font-weight: 700;
+            color: #ff9900;
+            text-decoration: none;
+        }
 
-	/* Nustatymai telefonams ir planšetėms */
-@media (max-width: 768px) {
-    .logo {
-        position: relative; /* Atkabiname nuo kampo, kad būtų centre */
-        top: 20px;
-        left: 0;
-        margin: 0 auto 40px auto; /* Centruojame ir pridedame tarpą apačioje */
-        width: 180px; /* Sumažiname logotipą telefone */
-    }
+        /* --- MOBILI VERSIJA --- */
+        @media (max-width: 768px) {
+            .main-wrapper {
+                justify-content: space-between; 
+                /* PAKEITIMAS: Trečias skaičius (15px) nuleidžia kontaktus labai žemai */
+                padding: 60px 20px 15px 20px; 
+                height: 100vh;
+            }
 
-    .main-wrapper {
-        justify-content: flex-start; /* Pradedame rodyti turinį nuo viršaus, ne nuo centro */
-        padding-top: 40px;
-        height: auto; /* Leidžiame puslapiui ilgėti, jei tekstas netelpa */
-        min-height: 100vh;
-    }
+            .logo {
+                position: static;
+                width: 90% !important;
+                max-width: 400px;
+                margin: 0 auto !important;
+            }
 
-    .content-container {
-        max-width: 100%;
-        padding: 0 15px;
-    }
+            .content-container {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 100%;
+                padding: 0;
+            }
 
-    .main-text {
-        font-size: 1.4rem !important; /* Mažesnis šriftas, kad tilptų */
-        line-height: 1.4 !important;
-        margin-top: 20px !important;
-        letter-spacing: 1px !important;
-    }
+            .main-text {
+                font-size: 1.8rem !important;
+                line-height: 1.4 !important;
+                margin-top: 50px !important;
+                margin-bottom: 0 !important;
+            }
 
-    .highlight-black {
-        font-size: 1.6rem !important;
-        display: block; /* "JAU GREITAI" bus atskiroje eilutėje viršuje */
-        margin-bottom: 15px;
-        margin-right: 0;
-    }
+            .highlight-black {
+                font-size: 2.1rem !important;
+                display: block;
+                margin-bottom: 10px;
+            }
 
-    .footer-cta {
-        margin-top: 60px !important; /* Sumažiname tarpą telefone, kad nereiktų daug scrollinti */
-        font-size: 1.1rem !important;
-    }
+            .footer-cta {
+                margin-top: 100 !important;
+                font-size: 1.3rem !important;
+                /* PAKEITIMAS: Mažas tarpas nuo pačios apačios */
+                padding-bottom: 5px; 
+		text-align: center;
+                flex-shrink: 0;
+            }
+
+	/* Ši dalis veiks TIK mobilioje versijoje */
+	   .email-wrapper {
+    		display: block;    /* Priverčia el. paštą nukristi į naują eilutę */
+   		margin-top: 5px;   /* Nedidelis tarpas tarp teksto ir el. pašto */
+    		font-weight: 700;  /* Padaro el. paštą ryškesnį */
 }
         }
     </style>
@@ -130,16 +138,17 @@
 
     <div class="main-wrapper">
         <img src="logo.png" alt="Padeliok" class="logo">
-	<div class="content-container">
-   	   <p class="main-text">
-              <span class="highlight-black">JAU GREITAI.</span> 
-              Nauja platforma leisianti atlikti išsamią perkamo ar parduodamo sklypo galimybių studiją.
-    </p>
+        <div class="content-container">
+            <p class="main-text">
+                <span class="highlight-black">JAU GREITAI.</span> 
+                Nauja platforma leisianti atlikti išsamią perkamo ar parduodamo sklypo galimybių studiją.
+            </p>
 
-    <div class="footer-cta">
-        susisiek jau dabar <a href="mailto:info@padeliok.lt" class="email-link">info@padeliok.lt</a>
+            <div class="footer-cta">
+                susisiek jau dabar <span class="email-wrapper"><a href="mailto:info@padeliok.lt" class="email-link">info@padeliok.lt</a></span>
+            </div>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
